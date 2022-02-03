@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AesCryptoLibrary", "AesCryptoLibrary\AesCryptoLibrary.csproj", "{35C52A4C-5BBE-44B8-BAE1-F4818F85ACE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35C52A4C-5BBE-44B8-BAE1-F4818F85ACE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35C52A4C-5BBE-44B8-BAE1-F4818F85ACE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35C52A4C-5BBE-44B8-BAE1-F4818F85ACE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35C52A4C-5BBE-44B8-BAE1-F4818F85ACE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03090C55-D6B4-4224-9BD0-7261F2747F1D}
+	EndGlobalSection
+EndGlobal

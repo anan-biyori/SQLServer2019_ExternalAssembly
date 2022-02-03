@@ -1,0 +1,6 @@
+E:\MyDevSpace\Demo\AesCryptoLibrary\AesCryptoLibrary\bin\Debug\AesCryptoLibrary.dll
+E:\MyDevSpace\Demo\AesCryptoLibrary\AesCryptoLibrary\bin\Debug\AesCryptoLibrary.pdb
+E:\MyDevSpace\Demo\AesCryptoLibrary\AesCryptoLibrary\obj\Debug\AesCryptoLibrary.csproj.AssemblyReference.cache
+E:\MyDevSpace\Demo\AesCryptoLibrary\AesCryptoLibrary\obj\Debug\AesCryptoLibrary.csproj.CoreCompileInputs.cache
+E:\MyDevSpace\Demo\AesCryptoLibrary\AesCryptoLibrary\obj\Debug\AesCryptoLibrary.dll
+E:\MyDevSpace\Demo\AesCryptoLibrary\AesCryptoLibrary\obj\Debug\AesCryptoLibrary.pdb
