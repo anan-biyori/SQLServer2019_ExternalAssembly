@@ -1,0 +1,51 @@
+
+--1. 先執行 sys.sp_add_trusted_assembly：
+DECLARE @clrName nvarchar(4000) = 'AesCryptoLibrary, version=1.0.0.0, culture=neutral, publickeytoken=null, processorarchitecture=msil'
+EXEC sys.sp_add_trusted_assembly [SHA2_512 雜湊值], @clrName;
+
+
+--2. 再執行元件註冊：
+CREATE ASSEMBLY assyAesEncryptionHelper FROM '[DLL路徑]'
+
+
+--3. 接著執行純量函式建立：
+CREATE FUNCTION dbo.clrAesEncryptBase64
+( 
+  @SourceStr as nvarchar(100),
+  @CryptoKey as nvarchar(100)
+) 
+RETURNS nvarchar(200) 
+AS EXTERNAL NAME [assyAesEncryptionHelper].[AesCryptoLibrary.AesEncryptionHelper].[aesEncryptBase64]
+
+GO
+
+CREATE FUNCTION dbo.clrAesDecryptBase64
+( 
+  @SourceStr as nvarchar(100),
+  @CryptoKey as nvarchar(100)
+) 
+RETURNS nvarchar(200) 
+AS EXTERNAL NAME [assyAesEncryptionHelper].[AesCryptoLibrary.AesEncryptionHelper].[aesDecryptBase64]
+
+
+--4. 然後執行clr enabled：
+EXEC sp_configure 'clr enabled' , '1';  
+RECONFIGURE;
+GO
+
+
+--5. 
+ALTER ASSEMBLY [assyAesEncryptionHelper]
+   WITH PERMISSION_SET = UNSAFE;
+GO
+
+
+--6. 純量函式測試語法：
+然後我們測試函式解密結果是否正確，新增查詢視窗並執行以下語法：
+SELECT dbo.clrAesEncryptBase64('Hello from DLL!', 'TestKey@12345')
+
+
+然後我們測試函式解密結果是否正確，新增查詢視窗並執行以下語法：
+SELECT dbo.clrAesDecryptBase64('tupM8wP0mBrxrrFONWGGRQ==', 'TestKey@12345')
+
+
